@@ -36,7 +36,6 @@ def fetch_and_generate_feed():
         except Exception as e:
             print(f"Error fetching {url}: {e}")
 
-
 def generate_rss():
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
@@ -67,4 +66,4 @@ def schedule_task():
 if __name__ == "__main__":
     fetch_and_generate_feed()
     threading.Thread(target=schedule_task, daemon=True).start()
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=False)
