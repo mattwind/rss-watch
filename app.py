@@ -41,7 +41,7 @@ def generate_rss():
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = "Website Update"
-    ET.SubElement(channel, "link").text = "http://localhost:5000/rss"
+    ET.SubElement(channel, "link").text = "https://iurkaa3ufa.us-east-1.awsapprunner.com/rss"
     ET.SubElement(channel, "description").text = "Website Update"
     
     for item in feed_data:
